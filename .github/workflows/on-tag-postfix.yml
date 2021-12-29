@@ -1,0 +1,13 @@
+name: Test tag event with postfix
+
+on:
+  push:
+    tags:
+      - "v*"
+      - "!v*-rc*"
+
+jobs:
+  do-nothing:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "echo hi"
